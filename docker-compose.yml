@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  java_app:
+    container_name: java_app
+    image: pee-java_app:1.0.0
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_URL=jdbc:postgres://grupo9:2xWJFNgYwtJfs0KiYD05ZYcUxste4sHu@dpg-ciag6kh8g3nden49jnbg-a.oregon-postgres.render.com/dbproyecto_4565
+      - DATABASE_USERNAME=grupo9
+      - DATABASE_PASSWORD=2xWJFNgYwtJfs0KiYD05ZYcUxste4sHu
+      - JWTSECRET=2PCYlj7g&x9kSw5TsoVb4S6lgFBIM59m
+    depends_on:
+      - dbproyecto_4565
+  dbproyecto_4565:
+    container_name: java_db
+    image: postgres:12
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      JWTSECRET: 2PCYlj7g&x9kSw5TsoVb4S6lgFBIM59m

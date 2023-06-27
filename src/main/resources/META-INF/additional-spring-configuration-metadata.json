@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "spring.datasource.jwt.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.jwt.secret'"
+  },
+  {
+    "name": "spring.datasource.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.secret'"
+  }
+]}
